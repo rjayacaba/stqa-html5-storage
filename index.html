@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Document</title>
+</head>
+<body>
+
+Name:
+<input type="text" id="txtName">
+<button onclick="addName()">Add to Local Storage</button> 
+
+<script>
+sample();
+function sample(){
+	let msg = "Hello World!";
+	console.log(msg);
+	localStorage.setItem('msg', 'Hello');
+	sessionStorage.setItem('msg', 'World');
+
+	let str1 = localStorage.getItem('msg');
+	let str2 = sessionStorage.getItem('msg');
+	let str3 = str1 + str2;
+	console.log(str3);
+
+	//localStorage.removeItem('msg');
+	localStorage.clear();
+	sessionStorage.clear();
+}
+function addName1(){
+	let name = document.querySelector('#txtName').value;
+	console.log(name);
+	localStorage.setItem('name',name);
+	session
+	Storage.setItem('name',name);
+}
+
+let names = ['Jay', 'Korver'];
+function addName2(){
+	let name = document.querySelector('#txtName').value;
+	names.push(name);
+    localStorage.setItem('names',name);
+    let lsNames = localStorage.getItem('names');
+    console.log(lsNames.split(','));
+    let ListOfNames = lsNames.split(',');
+    console.log(ListOfNames[0]);
+}
+
+let json_names = [{
+	name:"Jay",
+	gemder: "M"
+
+},{
+	name:"Jae",
+	gender: "F"
+
+}];	
+function addName(){
+	console.log(json_names);
+	let karne = JSON.stringify(json_names);
+	localStorage.setItem('json_names', karne)
+}
+
+
+</script>
+
+</body>
+</html>
